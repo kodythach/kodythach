@@ -46,13 +46,13 @@ function generateTable() {
 
 	// check if beginning start num is bigger than ending start num
 	if (bStartNumVal > eStartNumVal) {
-		document.getElementById('content').innerHTML = '<div id="error"><p>Error: Beginning Start Num cannot be bigger than ending Start Num</p></div>';
+		document.getElementById('content').innerHTML = '<div id="error"><p>Error: Beginning multiplier cannot be bigger than ending multiplier</p></div>';
 		return;
 	}
 
 	// check if beginning last num is bigger than ending last num
 	if (bLastNumVal > eLastNumVal) {
-		document.getElementById('content').innerHTML = '<div id="error"><p>Error: Beginning Last Num cannot be bigger than ending Last Num</p></div>';
+		document.getElementById('content').innerHTML = '<div id="error"><p>Error: Beginning multiplicand cannot be bigger than ending multiplicand</p></div>';
 		return;
 	}
 
