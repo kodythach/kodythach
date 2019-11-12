@@ -1,0 +1,90 @@
+/*
+ File: css/style.css
+ 91.461 Assignment 4: Styling Your First Web Page With CSS
+ Kody Thach, UMass Lowell Computer Science, kody_thach@student.uml.edu
+ Copyright (c) 2019 by Kody Thach. All rights reserved. May be
+freely
+ copied or excerpted for educational purposes with credit to the
+author.
+ modified by KT on October 1, 2019 at 8:34 PM
+
+ This CSS file handles the styling for index.html
+*/
+
+/* sets cursor img and sets font, element alignment, and background img */
+body {
+    /* learned this cursor property from w3 */
+    cursor: url(../assets/mouse/aero_arrow.cur), auto;
+    text-align: center;
+    background-color: black;
+    font-family: Verdana;
+    background-image: url(../assets/background/fall.jpg);
+}
+
+/* Creates an orange box with a black border centered in the page */
+.description {
+    margin: auto;
+    width: 500px;
+    text-align: center;
+    background-color: rgb(245, 211, 59);
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    overflow: auto;
+    max-height: 300px;
+}
+
+/* Creates a smaller orange box with a black border centered in the page */
+.topic {
+    border-radius: 5px;
+    margin: auto;
+    background-color: orange;
+    border: 2px solid black;
+    width: 15%;
+    min-width: 250px;
+    height: 30px;
+    margin-top: 25px;
+    margin-bottom: 3px;
+}
+
+/* Shifts children within .topic upwards to match center more */
+.topic * {
+    margin-top: 5px;
+}
+
+/* Sets orange box with black border */
+#welcome {
+    border-radius: 5px;
+    margin: auto;
+    width: 500px;
+    height: 50px;
+    background-color: orange;
+    border: 2px solid black;
+}
+
+/* Shifts children within #welcome upwards to match center more */
+#welcome h2 {
+    margin-top: 13px;
+}
+
+/* Creates an orange box with black outline top right of the window */
+#contact {
+    position: fixed;
+    border-radius: 5px;
+    background-color: orange;
+    border: 2px solid black;
+    min-width: 100px;
+    height: 30px;
+    top: 10px;
+    right: 30px;
+}
+
+/* sets hyperlink color to black */
+span {
+    color: black;
+}
+
+/* sets hyperlink color to white on hover */
+span:hover {
+    color: white;
+}

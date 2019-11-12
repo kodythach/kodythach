@@ -1,0 +1,144 @@
+<!--
+ File: index.html
+ 91.461 Assignment 4: Styling Your First Web Page With CSS
+ Kody Thach, UMass Lowell Computer Science, kody_thach@student.uml.edu
+ Copyright (c) 2019 by Kody Thach. All rights reserved. May be
+freely
+ copied or excerpted for educational purposes with credit to the
+author.
+ modified by KT on October 1, 2019 at 8:34 PM
+
+This Web Page currently tells some more details about myself,
+as well as list profiles where projects I've done are shown.
+Favorite music albums were also added and images are displayed on
+the site.
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Kody's Website</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- <script src="script.js"></script> -->
+  </head>
+  <body>
+    
+    <!-- Hyperlink to send an email to my student email upon click -->
+    <div id="contact">
+      <a href="mailto:kody_thach@student.uml.edu">Email</A>
+    </div>
+
+    <!-- Welcome banner for the site styled with the id 'welcome' for styling -->
+    <div id="welcome">
+      <h2>Kody Thach's Website</h2>
+    </div>
+
+    <!-- Index for all assignments with class 'topic' for styling. -->
+    <div class="topic">
+      <h3>Assignments</h3>
+    </div>
+    <!-- Assignment path listed as hyperlink -->
+    <div class="description">
+      <ul>
+        <li>
+          <a href="http://weblab.cs.uml.edu/~kthach/assignment2/index.html">
+            <span>Assignment 2</span>
+          </a>
+        </li>
+        <li>
+          <a href="http://weblab.cs.uml.edu/~kthach/assignment3/index.html">
+            <span>Assignment 3</span>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <span>Assignment 4</span>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <span>Assignment 5</span>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <span>Assignment 6</span>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <span>Assignment 7</span>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <span>Assignment 8</span>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <span>Assignment 9</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- About me section for the site with class 'topic' for styling -->
+    <div class="topic">
+      <h3>About Me</h3>
+    </div>
+    <!-- Description about me in unordered list -->
+    <div class="description">
+      <ul>
+        <li>I'm currently a <ins>Senior</ins> studying <b>Computer Science</b></li>
+        <li>I'm Cambodian and Chinese</li>
+        <li>This is my last Semester</li>
+        <li>I play video games, code projects, and play ukelele for hobbies</li>
+      </ul>
+    </div>
+
+    <!-- Favorite Music Albums section with class 'topic' for styling -->
+    <div class="topic">
+      <h3>Favorite Music Albums</h3>
+    </div>
+    <!-- List of albums with hyperlinks in the form of an image -->
+    <!-- The hyperlinks lead the user to the album on spotify -->
+    <div class="description">
+      <a href="https://open.spotify.com/album/60xcVwuQJAOyu11xf9mObS">
+        <img src="assets/albums/ascend.jpg" alt="Ascend" width="220" height="220"/>
+      </a>
+      <a href="https://open.spotify.com/album/2gUJErMHt6BoUBIFdlU5rN">
+        <img src="assets/albums/wild_youth.jpg" alt="Wild Youth" width="220" height="220"/>
+      </a>
+      <a href="https://open.spotify.com/album/7AJPV0L05IyIBid97AvwVD">
+        <img src="assets/albums/worlds.jpg" alt="Worlds" width="220" height="220"/>
+      </a>
+      <a href="https://open.spotify.com/album/3xybjP7r2VsWzwvDQipdM0">
+        <img src="assets/albums/freudian.jpg" alt="Freudian" width="220" height="220"/>
+      </a>
+      <a href="https://open.spotify.com/album/3mH6qwIy9crq0I9YQbOuDf">
+        <img src="assets/albums/blonde.jpeg" alt="Blonde" width="220" height="220"/>
+      </a>
+    </div>
+
+    <!-- Project section detailing links to project portfolios. Styled with 'topic' -->
+    <div class="topic">
+      <h3>Projects</h3>
+    </div>
+    <!-- Links to project in the form of a hyperlink -->
+    <div class="description">
+      <a href="https://github.com/kodycode">
+        <span>
+          Github Repo
+        </span>
+        <br>
+      </a>
+      <a href="https://devpost.com/kodycode">
+        <span>
+          DevPost
+        </span>
+      </a>
+    </div>
+    <!-- page content -->
+  </body>
+</html>

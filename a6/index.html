@@ -1,0 +1,47 @@
+<!--
+ File: index.html
+ 91.461 Assignment 6: Creating an Interactive Dynamic Table
+ Kody Thach, UMass Lowell Computer Science, kody_thach@student.uml.edu
+ Copyright (c) 2019 by Kody Thach. All rights reserved. May be
+freely
+ copied or excerpted for educational purposes with credit to the
+author.
+ created by KT on November 09, 2019 at 12:00 AM
+
+This single page application takes in four inputs consisting of a beginning
+start number, an ending start number, a beginning last number, and an ending
+last number. With these inputs and upon pressing the Generate button, a
+multiplication table will be generated.
+-->
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="css/stylesheet.css" type="text/css" />
+		<title>Multiplication Table</title>
+	</head>
+	<body>
+		<h1>Multiplication Table</h1>
+		
+		<!-- Form for user to enter inputs -->
+		<form>
+			Enter beginning multiplier:<br>
+			<input id="bStartNum" type="text" name="beginningStartNum"><br>
+			Enter ending multiplier:<br>
+			<input id="eStartNum" type="text" name="endingStartNum"><br>
+			Enter beginning multiplicand:<br>
+			<input id="bLastNum" type="text" name="beginningLastNum"><br>
+			Ending ending multiplicand:<br>
+			<input id="eLastNum" type="text" name="endingLastNum"><br>
+		</form>
+
+		<!-- Button to generate the Multiplication Table -->
+		<button id="generate" onclick="generateTable()">
+			Generate
+		</button>
+
+		<!-- Multiplication table appears inside this div -->
+		<div id="content"></div>
+		<script src="js/script.js"></script>
+	</body>
+</html>

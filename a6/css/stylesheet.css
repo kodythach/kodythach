@@ -1,0 +1,55 @@
+/*
+ File: css/stylesheet.css
+ 91.461 Assignment 6: Creating an Interactive Dynamic Table
+ Kody Thach, UMass Lowell Computer Science, kody_thach@student.uml.edu
+ Copyright (c) 2019 by Kody Thach. All rights reserved. May be
+freely
+ copied or excerpted for educational purposes with credit to the
+author.
+ created by KT on September 18, 2019 at 9:13 PM
+
+ This CSS file handles the styling for index.html
+*/
+table {
+  background-color: black;
+}
+
+td {
+  border: 1px solid white;
+  background-color: white;
+  color: black;
+}
+
+th {
+  border: 1px solid white;
+  color: white;
+}
+
+body {
+  text-align: center;
+  background-color: lightgray;
+}
+
+#content {
+  width: 99vw;
+}
+
+#tableContent {
+  height: 60vh;
+  width: 90%;
+  margin: 50px auto 0 auto;
+  overflow: auto;
+}
+
+#error {
+  background-color: red;
+  font-size: 20px;
+}
+
+#generate {
+  margin-top: 20px;
+}
+
+.odd {
+  background-color: lightsalmon;
+}
