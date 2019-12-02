@@ -1,0 +1,49 @@
+<!--
+ File: index.html
+ 91.461 Assignment 7: Using the jQuery Validation Plugin with Your Dynamic Table
+ Kody Thach, UMass Lowell Computer Science, kody_thach@student.uml.edu
+ Copyright (c) 2019 by Kody Thach. All rights reserved. May be
+freely
+ copied or excerpted for educational purposes with credit to the
+author.
+ modified by KT on December 01, 2019 at 6:51 PM
+
+This single page application takes in four inputs consisting of a beginning
+start number, an ending start number, a beginning last number, and an ending
+last number. With these inputs and upon pressing the Generate button, a
+multiplication table will be generated.
+-->
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="css/stylesheet.css" type="text/css" />
+		<title>Multiplication Table</title>
+	</head>
+	<body>
+		<h1>Multiplication Table</h1>
+		
+		<!-- Form for user to enter inputs -->
+		<form id="input_form">
+			Beginning Start Num:<br>
+			<input id="bStartNum" type="number" name="bStartNum" required><br>
+			Ending Start Num:<br>
+			<input id="eStartNum" type="number" name="eStartNum" required><br>
+			Beginning Last Num:<br>
+			<input id="bLastNum" type="number" name="bLastNum" required><br>
+			Ending Last Num:<br>
+			<input id="eLastNum" type="number" name="eLastNum" required><br>
+			<input id="btn" type="submit" value="Generate Table"/>
+		</form>
+
+		<!-- Warns user of any potential issues such as swapping of numbers -->
+		<div id="warning"></div>
+
+		<!-- Multiplication table appears inside this div -->
+		<div id="content"></div>
+		<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.js"></script>
+		<script type='text/javascript' src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/additional-methods.js"></script>
+		<script src="js/script.js"></script>
+	</body>
+</html>

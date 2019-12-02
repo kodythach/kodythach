@@ -1,0 +1,63 @@
+/*
+ File: css/stylesheet.css
+ 91.461 Assignment 7: Using the jQuery Validation Plugin with Your Dynamic Table
+ Kody Thach, UMass Lowell Computer Science, kody_thach@student.uml.edu
+ Copyright (c) 2019 by Kody Thach. All rights reserved. May be
+freely
+ copied or excerpted for educational purposes with credit to the
+author.
+ modified by KT on December 01, 2019 at 6:55 PM
+
+ This CSS file handles the styling for index.html
+*/
+table {
+  background-color: black;
+}
+
+td {
+  border: 1px solid white;
+  background-color: white;
+  color: black;
+}
+
+th {
+  border: 1px solid white;
+  color: white;
+}
+
+body {
+  text-align: center;
+  background-color: lightgray;
+}
+
+#content {
+  width: 99vw;
+}
+
+#tableContent {
+  height: 60vh;
+  width: 90%;
+  margin: 50px auto 0 auto;
+  overflow: auto;
+}
+
+#error {
+  background-color: red;
+  font-size: 20px;
+}
+
+#warning {
+  background-color: yellow;
+}
+
+#generate {
+  margin-top: 20px;
+}
+
+.odd {
+  background-color: lightsalmon;
+}
+
+.error {
+  color: red;
+}
