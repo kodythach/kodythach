@@ -1,0 +1,154 @@
+/*
+ File: css/stylesheet.css
+ 91.461 Assignment 8: Using the jQuery UI Slider and Tab Widgets
+ Kody Thach, UMass Lowell Computer Science, kody_thach@student.uml.edu
+ Copyright (c) 2019 by Kody Thach. All rights reserved. May be
+freely
+ copied or excerpted for educational purposes with credit to the
+author.
+ modified by KT on December 08, 2019 at 4:12 PM
+
+ This CSS file handles the styling for index.html
+*/
+
+/* sets the multiplication table background color to black */
+table {
+  background-color: black;
+}
+
+/* 
+  for each cell in multiplication table,
+  set a 1px white border and a white background color
+  and set the text color to black
+*/
+td {
+  border: 1px solid white;
+  background-color: white;
+  color: black;
+}
+
+/* for each table header, have a 1px white border text color white */
+th {
+  border: 1px solid white;
+  color: white;
+}
+
+/* center elements within body and have a lightgray background color */
+body {
+  text-align: center;
+  background-color: lightgray;
+}
+
+/* set div of multiplication table to be a width of 99vw */
+#content {
+  width: 99vw;
+}
+
+/* set div of saved multiplication table to be a width of 99vw */
+#savedContent {
+  width: 99vw;
+}
+
+/* 
+  set multiplication table height to be 60vh, width 90%,
+  slight top margin and centered within
+  respective div 
+*/
+#tableContent {
+  height: 60vh;
+  width: 90%;
+  margin: 50px auto 0 auto;
+  overflow: auto;
+}
+
+/* sets warning text with a background color of yellow */
+#warning {
+  background-color: yellow;
+}
+
+/* sets saved warning text with a background color of yellow */
+#savedWarning {
+  background-color: yellow;
+}
+
+/* sets every odd numbered cell that's incremented to light salmon */
+.odd {
+  background-color: lightsalmon;
+}
+
+/* sets error messages to be of text color red */
+.error {
+  color: red;
+}
+
+/* centers sliders and gives it a width of 500px with a margin 30px from the bottom */
+.slider {
+  margin: auto;
+  width: 500px;
+  margin-bottom: 30px;
+}
+
+/* 
+  Tab window is centered on page and by default does not display until a user adds
+  a saved tab. Height is set to 100px with a width of 800px and a black background color
+*/
+#tab_window {
+  margin: auto;
+  display: none;
+  height: 100px;
+  width: 800px;
+  background-color: black;
+}
+
+/*
+  For each saved tab displayed, there'll be a white colored text and float left to
+  show them side by side. There'll be a solid border and a width of it being 1px.
+  Padding set to 5px.
+*/
+.tab {
+  color: white;
+  float: left;
+  border-style: solid;
+  border-width: 1px;
+  padding: 5px;
+}
+
+/*
+  Sets a the exit span for removing a tab to have a margin to its left by 10px for
+  added spacing and to be bolded as well
+*/
+.removeTab {
+  margin-left: 10px;
+  font-weight:bold;
+}
+
+/* changes cursor to pointer upon hovering the exit span */
+.removeTab:hover { 
+  cursor: pointer; 
+}
+
+/* sets background color of tab list to gray */
+#tab_list {
+  background-color: gray;
+}
+
+/* 
+  inverts the colors of an inactive tab
+  just by changing the color to black and having the background color white 
+*/
+.active_tab {
+  color: black;
+  background-color: white;
+}
+
+/*
+  changes cursor to pointer upon hovering the data inside the saved tab
+*/
+.data { 
+  cursor: pointer;
+}
+
+/* adds margin to bottom of clear button */
+#clearBtn {
+  margin-bottom: 10px;
+}

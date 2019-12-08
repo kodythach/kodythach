@@ -1,0 +1,91 @@
+<!--
+ File: index.html
+ 91.461 Assignment 8: Using the jQuery UI Slider and Tab Widgets
+ Kody Thach, UMass Lowell Computer Science, kody_thach@student.uml.edu
+ Copyright (c) 2019 by Kody Thach. All rights reserved. May be
+freely
+ copied or excerpted for educational purposes with credit to the
+author.
+ modified by KT on December 08, 2019 at 4:13 PM
+
+This single page application takes in four inputs consisting of a beginning
+start number, an ending start number, a beginning last number, and an ending
+last number. With these inputs and upon using the sliders to set the input, a
+multiplication table will be generated.
+-->
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="css/stylesheet.css" type="text/css" />
+		<title>Multiplication Table</title>
+	</head>
+	<body>
+		<h1>Multiplication Table</h1>
+		
+		<!-- Form for user to enter inputs -->
+		<form id="input_form">
+			<!-- Beginning starting number section -->
+			Beginning Start Num:<br>
+			<input id="bStartNum" type="number" name="bStartNum" required><br>
+			<div class="slider" id="bstartNumSlider"></div>
+
+			<!-- Ending starting number section -->
+			Ending Start Num:<br>
+			<input id="eStartNum" type="number" name="eStartNum" required><br>
+			<div class="slider" id="estartNumSlider"></div>
+
+			<!-- Beginning last number section -->
+			Beginning Last Num:<br>
+			<input id="bLastNum" type="number" name="bLastNum" required><br>
+			<div class="slider" id="blastNumSlider"></div>
+
+			<!-- Ending last number section -->
+			Ending Last Num:<br>
+			<input id="eLastNum" type="number" name="eLastNum" required><br>
+			<div class="slider" id="elastNumSlider"></div>
+
+			<!-- Save Table Button section -->
+			<input id="btn" type="submit" value="Save Table"/>
+			<span><br>(Saved tabs show at the bottom of page)</span>
+		</form>
+
+		<!-- Warns user of any potential issues such as swapping of numbers -->
+		<div id="warning"></div>
+
+		<!-- Multiplication table appears inside this div -->
+		<div id="content"></div>
+
+		<h3>Saved Tables Show Below Here (up to 14):</h3>
+
+		<!-- Clears all saved tabs -->
+		<button id="clearBtn" type="button" onclick=clearSavedTabs()>Clear all saved tabs</button>
+
+		<!-- Warns user of any potential issues such as swapping of numbers for saved tables -->
+		<div id="savedWarning"></div>
+
+		<!-- Tabs that hold saved tables -->
+		<div id="tab_window">
+			<div id="tab_list"></div>
+		</div>
+		
+		<!-- Where the saved multiplication table displays -->
+		<div id="savedContent"></div>
+
+		<!-- jQuery 3.4.1 import -->
+		<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+
+		<!-- jQuery Validation plugin import-->
+		<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/additional-methods.js"></script>
+
+		<!-- jQuery UI plugin import -->
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+
+		<!-- jQuery UI CSS import -->
+		<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/ui-darkness/jquery-ui.css"/>
+
+		<!-- Multiplication Table Script Import -->
+		<script src="js/script.js"></script>
+	</body>
+</html>
