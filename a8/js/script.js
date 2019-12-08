@@ -132,8 +132,6 @@ function generateTable(bStartNumVal, eStartNumVal, bLastNumVal, eLastNumVal, tab
 
 	// check if beginning last num is bigger than ending last num then swap numbers to create table
 	if (bLastNumVal > eLastNumVal) {
-		console.log(bLastNumVal);
-		console.log(eLastNumVal);
 		$(warning).append('<p>Swapped beginning and ending last numbers to make table</p>')
 		var tmp = bLastNumVal;
 		bLastNumVal = eLastNumVal;
