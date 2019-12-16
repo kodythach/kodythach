@@ -90,6 +90,7 @@ function makeTilesDraggable() {
 
 function restart() {
     distribution = clean_distribution;
+    $('#word_counter').text("Word: ");
     initiateScrabble();
 }
 
@@ -103,6 +104,7 @@ function initiateScrabble() {
             $(event.toElement).remove();
             $(this).html(`<img class="placed_tile" id="${event.toElement.id}" slot="${event.target.slot}" src="${event.toElement.src}"></img>`);
             strip_tile_word[event.target.slot].letter = event.toElement.id;
+            getCurrentWord();
             $('.placed_tile').draggable({
                 revertDuration: 200,
                 start: function(event, ui) {
@@ -127,6 +129,24 @@ function initiateScrabble() {
             makeTilesDraggable();
         }
     });
+}
+
+function getCurrentWord() {
+    var letter_found = false;
+    var current_word = '';
+    for (var i = 0; i < strip_tile_word.length; i++) {
+        if (letter_found) {
+            if (strip_tile_word[i].letter !== '')
+                current_word += strip_tile_word[i].letter;
+            else
+                current_word += '-';
+        }
+        else if (strip_tile_word[i].letter !== '') {
+            current_word += strip_tile_word[i].letter;
+            letter_found = true;
+        }
+    }
+    $('#word_counter').text("Word: " + current_word.replace(/\-+$/g, ""));
 }
 
 $(function() {
