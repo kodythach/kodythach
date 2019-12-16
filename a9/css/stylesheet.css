@@ -1,0 +1,51 @@
+.tile {
+    margin-top: 69px;
+    width: 67px;
+    height: 67px;
+    margin-right: 10px;
+}
+
+#tile_list {
+    margin: auto;
+}
+
+#tile_holder {
+    width: 640px;
+    height: 182px;
+    margin: auto;
+    text-align: center;
+    background-image: url('../img/tile_holder.webp');
+}
+
+#scrabble_strip {
+    width: 1129px;
+    height: 80px;
+    margin: auto;
+    background-image: url('../img/Scrabble_Board_OneLine.png');
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.strip_tile {
+    width: 66px;
+    height: 66px;
+    border: 1px solid red;
+    float: left;
+    margin-left: 5px;
+    margin-top: 6px;
+    margin-right: 2px;
+}
+
+.placed_tile {
+    width: 67px;
+    height: 67px;
+}
+
+#buttons {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+h2 {
+    text-align: center;
+}
