@@ -71,7 +71,7 @@ function generateStripTiles() {
             strip_tile_word[i].special = specials.double_letter;
         else if (strip_tile_length === 13)
             strip_tile_word[i].special = specials.double_word;
-        $("#scrabble_strip").append('<div class="strip_tile" \
+        $("#scrabble_strip").append('<div class="strip_tile racked" \
                                      slot="' + i.toString() + '"></div>');
     }
 }
@@ -90,6 +90,7 @@ function makeTilesDraggable() {
 
 function restart() {
     distribution = clean_distribution;
+    strip_tile_word = [];
     $('#word_counter').text("Word: ");
     initiateScrabble();
 }
@@ -100,24 +101,31 @@ function initiateScrabble() {
     makeTilesDraggable();
 
     $('.strip_tile').droppable({
+        accept: ".tile",
         drop: function( event, ui ) {
-            $(event.toElement).remove();
-            $(this).html(`<img class="placed_tile" id="${event.toElement.id}" slot="${event.target.slot}" src="${event.toElement.src}"></img>`);
-            strip_tile_word[event.target.slot].letter = event.toElement.id;
-            getCurrentWord();
-            $('.placed_tile').draggable({
-                revertDuration: 200,
-                start: function(event, ui) {
-                    $(this).css("z-index", 100);
-                    $(this).draggable("option", "revert", "invalid");
-                },
-                stop: function() {
-                    $(this).css("z-index", "");
-                }
-            });
+            if (strip_tile_word[event.target.slot].letter === "") {
+                $(event.toElement).remove();
+                $(this).html(`<img class="placed_tile" id="${event.toElement.id}" slot="${event.target.slot}" src="${event.toElement.src}"></img>`);
+                strip_tile_word[event.target.slot].letter = event.toElement.id;
+                getCurrentWord();
+                $('.placed_tile').draggable({
+                    revertDuration: 200,
+                    start: function(event, ui) {
+                        $(this).css("z-index", 100);
+                        $(this).draggable("option", "revert", "invalid");
+                    },
+                    stop: function() {
+                        $(this).css("z-index", "");
+                    }
+                });
+            } else {
+                ui.draggable.animate(ui.draggable.data().uiDraggable.originalPosition,"fast");
+                return;
+            }
         }
     });
     $('#tile_holder').droppable({
+        accept: ".placed_tile",
         drop: function( event, ui ) {
             try {
                 strip_tile_word[event.toElement.slot].letter = '';
