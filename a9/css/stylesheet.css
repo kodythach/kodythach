@@ -61,3 +61,13 @@ h2 {
 #score_counter {
     
 }
+
+#blank_tile_dialog {
+    width: 50vw;
+}
+
+.sub_letter_tile {
+    width: 67px;
+    height: 67px;
+    margin-right: 10px;
+}

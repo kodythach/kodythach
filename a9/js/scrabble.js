@@ -56,6 +56,32 @@ function generateTiles() {
     }
 }
 
+function showBlankTileDialog(current_slot) {
+    $('#dialog').append('<div id="blank_tile_dialog" title="Choose a character"> \
+                    </div>');
+    for (let i = 0; i < 26; i++) {
+        let letter = distribution[i].letter;
+        $("#blank_tile_dialog").append("<img class='sub_letter_tile' id='" + letter + "' \
+                                        src='img/characters/Scrabble_Tile_" + letter + ".jpg'></img>");
+    }
+    $('.sub_letter_tile').click(function(event) {
+        // substitute blank character for letter
+        $(current_slot).html(`<img class="placed_tile" id="${event.toElement.id}" slot="${$(current_slot).context.slot}" blank="true" src="${event.toElement.src}"></img>`);
+        $('#blank_tile_dialog').dialog('close');
+        setPlacedTileDraggable();
+        strip_tile_word[$(current_slot).context.slot].letter = event.toElement.id;
+        getCurrentWord();
+    });
+    $('#blank_tile_dialog').dialog({ 
+        minWidth: 800,
+        close: function(event, ui) 
+        { 
+            $(this).empty();
+            $(this).remove();
+        }
+    });
+}
+
 function generateStripTiles() {
     $("#scrabble_strip").empty();
 
@@ -93,6 +119,22 @@ function restart() {
     strip_tile_word = [];
     $('#word_counter').text("Word: ");
     initiateScrabble();
+    try {
+        $('#blank_tile_dialog').dialog('close');
+    } catch(e) {}
+}
+
+function setPlacedTileDraggable() {
+    $('.placed_tile').draggable({
+        revertDuration: 200,
+        start: function(event, ui) {
+            $(this).css("z-index", 100);
+            $(this).draggable("option", "revert", "invalid");
+        },
+        stop: function() {
+            $(this).css("z-index", "");
+        }
+    });
 }
 
 function initiateScrabble() {
@@ -105,19 +147,14 @@ function initiateScrabble() {
         drop: function( event, ui ) {
             if (strip_tile_word[event.target.slot].letter === "") {
                 $(event.toElement).remove();
-                $(this).html(`<img class="placed_tile" id="${event.toElement.id}" slot="${event.target.slot}" src="${event.toElement.src}"></img>`);
+                if (event.toElement.id === "Blank")
+                    showBlankTileDialog(this);
+                else {
+                    $(this).html(`<img class="placed_tile" id="${event.toElement.id}" slot="${event.target.slot}" src="${event.toElement.src}"></img>`);
+                }
                 strip_tile_word[event.target.slot].letter = event.toElement.id;
                 getCurrentWord();
-                $('.placed_tile').draggable({
-                    revertDuration: 200,
-                    start: function(event, ui) {
-                        $(this).css("z-index", 100);
-                        $(this).draggable("option", "revert", "invalid");
-                    },
-                    stop: function() {
-                        $(this).css("z-index", "");
-                    }
-                });
+                setPlacedTileDraggable();
             } else {
                 ui.draggable.animate(ui.draggable.data().uiDraggable.originalPosition,"fast");
                 return;
@@ -130,7 +167,10 @@ function initiateScrabble() {
             try {
                 strip_tile_word[event.toElement.slot].letter = '';
                 $(event.toElement).remove();
-                $(this).children().append(`<img class="tile" id="${event.toElement.id}" src="${event.toElement.src}"></img>`);
+                if ($(event.toElement).attr('blank') === 'true')
+                    $(this).children().append(`<img class="tile" id="Blank" slot="${event.target.slot}" src="img/characters/Scrabble_Tile_Blank.jpg"></img>`);    
+                else 
+                    $(this).children().append(`<img class="tile" id="${event.toElement.id}" src="${event.toElement.src}"></img>`);
             } catch (e) {
                 // $(event.toElement).draggable('option','revert')();
             }
