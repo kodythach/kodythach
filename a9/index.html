@@ -11,11 +11,12 @@
     <body>
         <h2>Scrabble</h2>
         <span id="stats">
+            <p id="tile_counter">Tiles left: 100</p>
             <p id="word_counter">Word: </p>
             <p id="score_counter">Score: 0</p>
         </span>
         <div id="buttons">
-            <button id="submitBtn" type="button">Submit Word</button>
+            <button id="submitBtn" type="button" onclick=submit() disabled>Submit Word</button>
             <button id="restartBtn" type="button" onclick=restart()>Restart</button>
         </div>
         </button>
