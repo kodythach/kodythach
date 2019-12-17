@@ -1,36 +1,73 @@
+<!--
+ File: index.html
+ 91.461 Assignment 9: Implementing a Bit of Scrabble with Drag-and-Drop
+ Kody Thach, UMass Lowell Computer Science, kody_thach@student.uml.edu
+ Copyright (c) 2019 by Kody Thach. All rights reserved. May be
+freely
+ copied or excerpted for educational purposes with credit to the
+author.
+ modified by KT on December 16, 2019 at 9:20 PM
+
+This single page application takes simulates the game 'Scrabble' using
+one strip of the game. The user is given a rack containing 7 letters,
+and the user must drag each of these letters onto the scrabble strip
+to form a word. If the word is valid (exists in the dictionary), the
+user will be allowed to submit the word to receive a score towards
+the score counter. If invalid, the submit button will be greyed out and
+the user will not be able to click on it. There also exists a restart
+button should the user want to completely restart the game of scrabble.
+The tile counter is there to indicate how many tiles are available for
+the user to use.
+-->
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
         <title>Scrabble</title>
         <link rel="stylesheet" href="css/stylesheet.css" type="text/css" />
+
+        <!-- Imports jQuery UI CSS -->
         <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+        <!-- Imports jQuery Version 1.12.4 -->
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+
+        <!-- Imports jQuery UI -->
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     </head>
     <body>
+        <!-- Header for Scrabble Application -->
         <h2>Scrabble</h2>
+
+        <!-- Location to display stats such as tiles remaining, the word a user has made, and their current score of the game -->
         <span id="stats">
             <p id="tile_counter">Tiles left: 100</p>
             <p id="word_counter">Word: </p>
             <p id="score_counter">Score: 0</p>
         </span>
+
+        <!-- Section for buttons. Here lies a submit where the user can submit the word for a score, and a restart button to restart hte game -->
         <div id="buttons">
             <button id="submitBtn" type="button" onclick=submit() disabled>Submit Word</button>
             <button id="restartBtn" type="button" onclick=restart()>Restart</button>
         </div>
-        </button>
-        <div id="scrabble_strip">
 
-        </div>
+        <!-- Where the scrabble strip will show up for the user to drag and drop scrabble letters -->
+        <div id="scrabble_strip"></div>
+
+        <!-- Holds the tiles that the user can use to drag and drop onto the scrabble strip -->
+        <!-- Tile holder will display the background image needed for the rack -->
         <div id="tile_holder">
+            <!-- Where the letters will reside in -->
             <div id="tile_list">
-
             </div>
         </div>
-        <div id="dialog">
 
+        <!-- Where dialog information will be stored -->
+        <div id="dialog">
         </div>
+
+        <!-- Imports Scrabble JS file -->
         <script src="js/scrabble.js"></script>
     </body>
 </html>

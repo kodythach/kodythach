@@ -1,7 +1,25 @@
+/*
+ File: css/stylesheet.css
+ 91.461 Assignment 9: Implementing a Bit of Scrabble with Drag-and-Drop
+ Kody Thach, UMass Lowell Computer Science, kody_thach@student.uml.edu
+ Copyright (c) 2019 by Kody Thach. All rights reserved. May be
+freely
+ copied or excerpted for educational purposes with credit to the
+author.
+ modified by KT on December 16, 2019 at 9:32 PM
+
+ This CSS file handles the styling for index.html
+*/
+
+/* Gives page a lightgray background */
 body {
     background-color: lightgray;
 }
 
+/* 
+ * Tiles displayed in the tile rack have a margin-top of 69px to keep it lowered to the bottom of the rack image.
+ * Width and height is fixed at 67px with a margin-right to separate it from the other tiles.
+ */
 .tile {
     margin-top: 69px;
     width: 67px;
@@ -9,10 +27,17 @@ body {
     margin-right: 10px;
 }
 
+
+/* Centers tile_list in center of tile_holder so it shows that its centered in middle of the image */
 #tile_list {
     margin: auto;
 }
 
+/* 
+ * Tile holder that displays the image of the tile rack. 
+ * Width and height set to image dimensions and is centered within the page .
+ * Everythign inside it is centered as well.
+ */
 #tile_holder {
     width: 640px;
     height: 182px;
@@ -21,6 +46,11 @@ body {
     background-image: url('../img/tile_holder.webp');
 }
 
+/* 
+ * Displays scrabble strip with same width and height dimensions as the image itself.
+ * Centered within the middle of the page along with everything else inside it. 
+ * There exists a margin bottom to separate it from the tile rack.
+ */
 #scrabble_strip {
     width: 1129px;
     height: 80px;
@@ -30,48 +60,57 @@ body {
     margin-bottom: 30px;
 }
 
+/* 
+ * Represents the tiles that go inside the strip.
+ * Similar width and height dimensions as it is in the tile rack, with a float left to have it aligned horizontally with the strip.
+ * While the margins aren't perfect, they serve a purpose to have it aligned within the squares of the strip.
+ */
 .strip_tile {
     width: 66px;
     height: 66px;
-    border: 1px solid red;
     float: left;
-    margin-left: 5px;
-    margin-top: 6px;
-    margin-right: 2px;
+    margin-left: 6px;
+    margin-top: 7px;
+    margin-right: 3px;
+    margin-bottom: 1px;
 }
 
+/* Each placed tile is resized to have a width/height of 67px. */
 .placed_tile {
     width: 67px;
     height: 67px;
 }
 
+/* Align buttons in center of page and with a bottom margin to separate it from the scrabble strip */
 #buttons {
     text-align: center;
     margin-bottom: 10px;
 }
 
+/* Center header in middle of page */
 h2 {
     text-align: center;
 }
 
+/* Center stat counters in center of page */
 #stats {
     text-align: center;
 }
 
-#word_counter {
-
-}
-
-#score_counter {
-    
-}
-
+/* Have the dialog that pops up when a user places a blank tile be a width of 50vw */
 #blank_tile_dialog {
     width: 50vw;
 }
 
+/* Have the substituted tile options in dialog for a blank tile be the same dimensions as a regular tile */
 .sub_letter_tile {
     width: 67px;
     height: 67px;
     margin-right: 10px;
 }
+
+/* 
+ * Prevents closing button displaying in dialog for blank tile
+ * Source: https://stackoverflow.com/questions/896777/how-to-remove-close-button-on-the-jquery-ui-dialog
+ */
+.no-close .ui-dialog-titlebar-close {display: none }
