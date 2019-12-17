@@ -1,5 +1,5 @@
 /*
- File: scrabble.js
+ File: js/scrabble.js
  91.461 Assignment 9: Implementing a Bit of Scrabble with Drag-and-Drop
  Kody Thach, UMass Lowell Computer Science, kody_thach@student.uml.edu
  Copyright (c) 2019 by Kody Thach. All rights reserved. May be
